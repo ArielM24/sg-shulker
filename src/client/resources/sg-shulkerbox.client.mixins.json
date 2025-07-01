@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "com.sg.shulkerbox.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"ShowShulkerPreviewMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
