@@ -3,9 +3,9 @@
 	"id": "sg-shulkerbox",
 	"version": "${version}",
 	"name": "SG Shulkerbox",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A mod to show a preview of the content of a shulker with a customizable keybind",
 	"authors": [
-		"Me!"
+		"ArielM24"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

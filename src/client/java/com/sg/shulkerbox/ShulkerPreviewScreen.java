@@ -57,7 +57,7 @@ public class ShulkerPreviewScreen extends Screen {
         if(shulkerTitle == null){
             shulkerTitle = Text.literal("");
         }
-        context.drawText(textRenderer, shulkerTitle, this.x + 8, this.y + 6, 0xFF35393d, false);
+        context.drawText(textRenderer, "(Preview) " + shulkerTitle.getLiteralString(), this.x + 8, this.y + 6, 0xFF35393d, false);
     }
 
     @Override
