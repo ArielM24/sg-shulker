@@ -16,7 +16,7 @@ public class ShulkerPreviewScreen extends Screen {
     private final int backgroundWidth = 176;
     private final int backgroundHeight = 78;
 
-    private final Text title;
+    private final Text name;
     private final List<ItemStack> inventory;
     private final Screen parent;
 
@@ -25,7 +25,7 @@ public class ShulkerPreviewScreen extends Screen {
 
     public ShulkerPreviewScreen(ItemStack shulker, Screen parent) {
         super(Text.literal("ShulkerPreviewScreen"));
-        this.title = shulker.getCustomName();
+        this.name = shulker.getCustomName();
         this.inventory = shulker.get(DataComponentTypes.CONTAINER).stream().toList();
         this.parent = parent;
 
@@ -53,7 +53,11 @@ public class ShulkerPreviewScreen extends Screen {
     public void renderBackground(DrawContext context, int mouseX, int mouseY, float delta) {
         context.drawTexture(RenderPipelines.GUI_TEXTURED, SHULKER_BACKGROUND, this.x, this.y, 0.0F, 0.0F,
                 this.backgroundWidth, this.backgroundHeight, 256, 256);
-        context.drawText(textRenderer, this.title, this.x + 8, this.y + 6, 0xFF35393d, false);
+        Text shulkerTitle = name;
+        if(shulkerTitle == null){
+            shulkerTitle = Text.literal("");
+        }
+        context.drawText(textRenderer, shulkerTitle, this.x + 8, this.y + 6, 0xFF35393d, false);
     }
 
     @Override
