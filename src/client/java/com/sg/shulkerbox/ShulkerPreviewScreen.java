@@ -38,6 +38,11 @@ public class ShulkerPreviewScreen extends Screen {
     }
 
     @Override
+    public boolean shouldPause() {
+        return false;
+    }
+
+    @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
         this.renderBackground(context, mouseX, mouseY, delta);
@@ -54,10 +59,11 @@ public class ShulkerPreviewScreen extends Screen {
         context.drawTexture(RenderPipelines.GUI_TEXTURED, SHULKER_BACKGROUND, this.x, this.y, 0.0F, 0.0F,
                 this.backgroundWidth, this.backgroundHeight, 256, 256);
         Text shulkerTitle = name;
-        if(shulkerTitle == null){
+        if (shulkerTitle == null) {
             shulkerTitle = Text.literal("");
         }
-        context.drawText(textRenderer, "(Preview) " + shulkerTitle.getLiteralString(), this.x + 8, this.y + 6, 0xFF35393d, false);
+        context.drawText(textRenderer, "(Preview) " + shulkerTitle.getLiteralString(), this.x + 8, this.y + 6,
+                0xFF35393d, false);
     }
 
     @Override
