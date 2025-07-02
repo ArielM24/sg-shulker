@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.sg.shulkerbox.ShulkerPreviewScreen;
+import com.sg.shulkerbox.SGShulkerbox;
 import com.sg.shulkerbox.SGShulkerboxClient;
 
 @Mixin(HandledScreen.class)
@@ -22,6 +23,7 @@ public class ShowShulkerPreviewMixin {
     private void keyPressed(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
         if (SGShulkerboxClient.key.matchesKey(keyCode, scanCode) && this.focusedSlot != null) {
             ItemStack stack = this.focusedSlot.getStack();
+            SGShulkerbox.LOGGER.info("stack " +stack.getItemName().getString());
             if (SGShulkerboxClient.shulkers.contains(stack.getItem())) {
                 SGShulkerboxClient.client.setScreen(new ShulkerPreviewScreen(stack, SGShulkerboxClient.client.currentScreen));
             }

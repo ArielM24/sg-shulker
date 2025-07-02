@@ -3,7 +3,8 @@
 	"package": "com.sg.shulkerbox.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ShowShulkerPreviewMixin"
+		"ShowShulkerPreviewMixin",
+		"ShowShulkerCapacityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
