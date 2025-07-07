@@ -37,7 +37,7 @@ public class SGShulkerboxClient implements ClientModInitializer {
 		
 
 		key = KeyBindingHelper.registerKeyBinding(
-				new KeyBinding("open_shulker", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "Shulker Preview"));
+				new KeyBinding("Open shulker preview", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_V, "Shulker Preview"));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (client.player != null) {
